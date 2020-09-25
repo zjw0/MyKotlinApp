@@ -1,7 +1,8 @@
-package com.zhao.mykotlinapp
+package com.zhao.mykotlinapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.zhao.mykotlinapp.R
 
 class MainActivity : AppCompatActivity() {
 
