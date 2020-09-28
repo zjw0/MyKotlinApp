@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         rec_view.layoutManager = LinearLayoutManager(this)
         rec_view.adapter = adapter
         //模拟数据
+//        var list = mutableListOf("1","2","3")
+//        adapter.setNewData(list)
+        //模拟数据
         var mList = mutableListOf<DataListBean.RSPDATA.LIST>()
         var list = DataListBean.RSPDATA.LIST("", "00")
         for (i in 0..3) {
