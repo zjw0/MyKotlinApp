@@ -17,7 +17,7 @@ class ListAdapter(layoutID: Int) :
         var index = helper.layoutPosition
         var etName = helper.getView<EditText>(R.id.et_name)
         var ivSelect = helper.getView<ImageView>(R.id.iv_select)
-//        helper.setText(R.id.et_name, "请赐予我名字")
+        helper.setText(R.id.et_name, item.nAME)
 //        helper.setText(R.id.iv_pic, "")
         //是否可输入
         etName.isEnabled = item.isLock.equals("00")

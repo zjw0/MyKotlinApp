@@ -28,9 +28,8 @@ class MainActivity : AppCompatActivity() {
 //        adapter.setNewData(list)
         //模拟数据
         var mList = mutableListOf<DataListBean.RSPDATA.LIST>()
-        var list = DataListBean.RSPDATA.LIST("", "00")
-        for (i in 0..3) {
-            mList.add(i, list)
+        for (i in 0..2) {
+            mList.add(i, DataListBean.RSPDATA.LIST("美女"+ (i+1), "00"))
         }
         var mRSPDATA = DataListBean.RSPDATA(mList)
         mDataListBean = DataListBean("", mRSPDATA, "")

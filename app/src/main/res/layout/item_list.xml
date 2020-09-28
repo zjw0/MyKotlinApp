@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="请赐予我名字"
             android:textColor="@color/black"
+            android:gravity="center"
             android:background="@null"
             android:textSize="14sp"/>
 
