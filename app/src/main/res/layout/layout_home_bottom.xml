@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rel_tab1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:background="@drawable/layout_ripper">
+
+        <ImageView
+            android:id="@+id/iv_tab1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/tab1_normal" />
+
+        <TextView
+            android:id="@+id/tv_tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_tab1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="首页"
+            android:textColor="@color/text_normal_color"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_tab2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:background="@drawable/layout_ripper">
+
+        <ImageView
+            android:id="@+id/iv_tab2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/tab2_normal" />
+
+        <TextView
+            android:id="@+id/tv_tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_tab2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="搜索"
+            android:textColor="@color/text_normal_color"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_tab3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:background="@drawable/layout_ripper">
+
+        <ImageView
+            android:id="@+id/iv_tab3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/tab3_normal" />
+
+        <TextView
+            android:id="@+id/tv_tab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_tab3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="购物"
+            android:textColor="@color/text_normal_color"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_tab4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:background="@drawable/layout_ripper">
+
+        <ImageView
+            android:id="@+id/iv_tab4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/tab4_normal" />
+
+        <TextView
+            android:id="@+id/tv_tab4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_tab4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="我的"
+            android:textColor="@color/text_normal_color"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
