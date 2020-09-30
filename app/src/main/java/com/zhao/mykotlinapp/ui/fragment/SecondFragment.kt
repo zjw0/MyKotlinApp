@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.zhao.mykotlinapp.R
 import com.zhao.mykotlinapp.base.BaseFragment
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.toast_text.*
 
 /**
@@ -20,7 +21,7 @@ class SecondFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        layoutView = inflater.inflate(R.layout.fragment_first, container, false)
+        layoutView = inflater.inflate(R.layout.fragment_book_store, container, false)
 
         return layoutView
     }
@@ -29,14 +30,13 @@ class SecondFragment : BaseFragment() {
         return true
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
     }
 
     private fun initView() {
-        tv_text.text = "搜索"
+
     }
 
 
