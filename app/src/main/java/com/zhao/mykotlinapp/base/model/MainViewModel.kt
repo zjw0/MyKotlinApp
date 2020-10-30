@@ -28,7 +28,6 @@ class MainViewModel : ViewModel() {
         }) {
             //更新加载状态
             loadState.value = LoadState.Loading()
-
             //并发请求三张图片的数据
             val data1 = async { NetworkService.apiService.getImage() }
             val data2 = async { NetworkService.apiService.getImage() }
@@ -37,7 +36,6 @@ class MainViewModel : ViewModel() {
             imageData.value = listOf(data1.await(), data2.await(), data3.await()).map {
                 it.imgurl
             }
-
             //更新加载状态
             loadState.value = LoadState.Success()
         }
