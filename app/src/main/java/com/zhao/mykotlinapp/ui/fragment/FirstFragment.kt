@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import com.zhao.mykotlinapp.R
 import com.zhao.mykotlinapp.base.BaseFragment
 import com.zhao.mykotlinapp.ui.activity.ListActivity
-import kotlinx.android.synthetic.main.toast_text.*
+import com.zhao.mykotlinapp.base.model.NetPicActivity
+import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.toast_text.tv_text
 
 /**
  * Describe ：首页
@@ -40,6 +42,9 @@ class FirstFragment : BaseFragment() {
     private fun initView() {
         tv_text.setOnClickListener {
             startActivity(Intent(activity, ListActivity::class.java))
+        }
+        tv_text1.setOnClickListener {
+            startActivity(Intent(activity, NetPicActivity::class.java))
         }
     }
 

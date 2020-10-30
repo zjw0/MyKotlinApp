@@ -18,7 +18,7 @@ data class DataListBean(
         data class LIST(
             @SerializedName("NAME")
             var nAME: String = "", //名字
-            var isLock:String = "00"
+            var isLock:String = "00" //是否选中
         )
     }
 }

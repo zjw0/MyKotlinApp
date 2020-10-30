@@ -8,8 +8,15 @@
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:text="首页"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_text1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="图片"
         android:gravity="center"/>
 
 </LinearLayout>
