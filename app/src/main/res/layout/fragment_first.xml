@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <TextView
@@ -18,5 +19,53 @@
         android:layout_height="50dp"
         android:text="图片"
         android:gravity="center"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.zhao.mykotlinapp.ui.widget.RoundRectLayout
+            android:id="@+id/rel_banner"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:background="@mipmap/girl" />
+        </com.zhao.mykotlinapp.ui.widget.RoundRectLayout>
+
+
+        <com.zhao.mykotlinapp.ui.widget.viewpagerindicator.ViewPagerIndicator
+            android:id="@+id/indicator_line"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/transparent"
+            app:vpi_animation="false"
+            app:vpi_default_color="@color/gray_trans_color"
+            app:vpi_distance="18dp"
+            app:vpi_distanceType="BY_DISTANCE"
+            app:vpi_gravityType="CENTER"
+            app:vpi_indicatorType="LINE"
+            app:vpi_length="10dp"
+            app:vpi_radius="5dp"
+            app:vpi_selected_color="@color/text_selected_color" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:overScrollMode="never"/>
 
 </LinearLayout>

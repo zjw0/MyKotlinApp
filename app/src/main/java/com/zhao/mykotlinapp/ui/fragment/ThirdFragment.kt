@@ -20,7 +20,7 @@ class ThirdFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        layoutView = inflater.inflate(R.layout.fragment_first, container, false)
+        layoutView = inflater.inflate(R.layout.fragment_fourth, container, false)
 
         return layoutView
     }

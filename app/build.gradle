@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.zhao.mykotlinapp"
-        minSdkVersion 26
+        minSdkVersion 22
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -29,6 +29,12 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs' // 指定aar存放的路径
+        }
     }
 
 }
@@ -53,6 +59,8 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'
+//    implementation 'com.youth.banner:banner:1.4.10'
+    api(name: 'banner-1.0.1', ext: 'aar')
 
     //协程简单使用
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
