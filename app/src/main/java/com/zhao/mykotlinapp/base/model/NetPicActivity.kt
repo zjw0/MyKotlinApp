@@ -10,6 +10,10 @@ import com.bumptech.glide.Glide
 import com.zhao.mykotlinapp.R
 import com.zhao.mykotlinapp.ui.bean.LoadState
 import kotlinx.android.synthetic.main.activity_net_pic.*
+import android.app.NotificationManager
+import android.content.Context
+import android.os.Build
+import com.fanjun.keeplive.KeepLive
 
 class NetPicActivity : AppCompatActivity() {
 
@@ -55,6 +59,20 @@ class NetPicActivity : AppCompatActivity() {
         //点击刷新按钮来网络加载
         button.setOnClickListener {
             viewModel.getData()
+        }
+        //点击停止服务
+        bt_stop.setOnClickListener {
+            //退出APP关掉后台保活服务
+            if (KeepLive.keepLiveService != null) {
+                KeepLive.keepLiveService.onStop()
+            }
+                if(Build.VERSION.SDK_INT >= 26) {
+                    val notificationManager: NotificationManager =
+                        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+//                    notificationManager.cancel(13691)
+                    notificationManager.cancel(this.packageName.toInt())
+                    notificationManager.cancelAll()
+                }
         }
     }
 }
