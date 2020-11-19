@@ -16,6 +16,7 @@ import com.zhao.mykotlinapp.base.show.T
 import com.zhao.mykotlinapp.ui.activity.ListActivity
 import com.zhao.mykotlinapp.ui.adapter.HomeTypeAdapter
 import com.zhao.mykotlinapp.ui.bean.HomeTypeBean
+import com.zhao.mykotlinapp.ui.game.activity.PictureGameActivity
 import com.zhao.mykotlinapp.ui.widget.RoundGlideImageLoader
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.toast_text.tv_text
@@ -61,12 +62,12 @@ class FirstFragment : BaseFragment(), OnBannerListener {
         typeAdapter = HomeTypeAdapter((R.layout.item_home_type))
         rv_type.adapter = typeAdapter
         typeAdapter.setOnItemClickListener { adapter, view, position ->
-            T.showShort(activity,"刷新")
+            startActivity(Intent(activity, PictureGameActivity::class.java))
         }
         //模拟数据
         var mList = mutableListOf<HomeTypeBean.RSPDATA.LIST>()
         for (i in 0..4) {
-            mList.add(i, HomeTypeBean.RSPDATA.LIST(""+ (i+1), "全部",""))
+            mList.add(i, HomeTypeBean.RSPDATA.LIST(""+ (i+1), "游戏",""))
         }
         var mRSPDATA = HomeTypeBean.RSPDATA(mList)
         var mHomeTypeBean = HomeTypeBean("", mRSPDATA, "")

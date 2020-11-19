@@ -1,29 +1,25 @@
-package com.zhao.mykotlinapp.base.model
+package com.zhao.mykotlinapp.ui.game.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.zhao.mykotlinapp.R
+import com.zhao.mykotlinapp.base.model.MainViewModel
 import com.zhao.mykotlinapp.ui.bean.LoadState
-import kotlinx.android.synthetic.main.activity_net_pic.*
-import android.app.NotificationManager
-import android.content.Context
-import android.os.Build
-import com.fanjun.keeplive.KeepLive
-import com.zhao.mykotlinapp.base.show.L
+import kotlinx.android.synthetic.main.activity_picture_game.*
 import java.util.*
 
-class NetPicActivity : AppCompatActivity() {
+class PictureGameActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_net_pic)
+        setContentView(R.layout.activity_picture_game)
 
         //获取ViewModel
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
@@ -47,35 +43,23 @@ class NetPicActivity : AppCompatActivity() {
         //对图片Url数据进行观察
         viewModel.imageData.observe(this, Observer {
             //用Glide加载三张图片
+            val num1 = Random().nextInt(2)
             Glide.with(this)
                 .load(it[0])
-                .into(imageView1)
+                .into(if(num1==1){imageViewLeft1}else{imageViewRight1})
+            val num2 = Random().nextInt(2)
             Glide.with(this)
                 .load(it[1])
-                .into(imageView2)
+                .into(if(num2==1){imageViewLeft2}else{imageViewRight2})
+            val num3 = Random().nextInt(2)
             Glide.with(this)
                 .load(it[2])
-                .into(imageView3)
+                .into(if(num3==1){imageViewLeft3}else{imageViewRight3})
         })
 
         //点击刷新按钮来网络加载
         button.setOnClickListener {
             viewModel.getData()
-        }
-        //点击停止服务
-        bt_stop.setOnClickListener {
-            //退出APP关掉后台保活服务
-            if (KeepLive.keepLiveService != null) {
-                KeepLive.keepLiveService.onStop()
-            }
-                if(Build.VERSION.SDK_INT >= 26) {
-                    val notificationManager: NotificationManager =
-                        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-                    notificationManager.cancel(13691)
-                    L.d("随机数："+Random().nextInt(10000))
-                    notificationManager.cancel(Random().nextInt(10000))
-                    notificationManager.cancelAll()
-                }
         }
     }
 }

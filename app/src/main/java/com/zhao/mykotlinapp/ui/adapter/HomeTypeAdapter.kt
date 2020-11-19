@@ -27,9 +27,9 @@ class HomeTypeAdapter(layoutRes: Int) :
             Glide.with(mContext).asBitmap().load(item.iMAGE)
                 .apply(
                     RequestOptions()
-                        .error(R.mipmap.ic_launcher)
+                        .error(R.mipmap.suixinlogo)
                 ).into(imageView)
-            textView.setText(item.nAME)
+            textView.text = item.nAME
         } catch (e: Exception) {
             e.printStackTrace()
         }
