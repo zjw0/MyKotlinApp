@@ -10,6 +10,7 @@ import androidx.lifecycle.viewModelScope
 import com.zhao.mykotlinapp.ui.bean.LoadState
 import com.zhao.mykotlinapp.base.network.NetworkService
 import com.zhao.mykotlinapp.ui.bean.ImageDataResponseBody
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -32,16 +33,24 @@ class MainViewModel : ViewModel() {
             loadState.value = LoadState.Loading()
 
             //并发请求三张图片的数据
-            val data1 = async { NetworkService.apiService.getImage() }
-            val data2 = async { NetworkService.apiService.getImage() }
-            val data3 = async { NetworkService.apiService.getImage() }
-//            var list = Deferred<ImageDataResponseBody>()
-//            for (i in 0..8) list.addAll(async { NetworkService.apiService.getImage() })
-
+//            val data1 = async { NetworkService.apiService.getImage() }
+//            val data2 = async { NetworkService.apiService.getImage() }
+//            val data3 = async { NetworkService.apiService.getImage() }
+            var dataList = mutableListOf<Deferred<ImageDataResponseBody>>()
+            var lists =  mutableListOf<ImageDataResponseBody>()
+            for (i in 0..7){
+                val datas = async { NetworkService.apiService.getImage() }
+                dataList.add(i,datas)
+                lists.add(i,dataList[i].await())
+            }
             //通过为LiveData设置新的值来触发更新UI
-            imageData.value = listOf(data1.await(), data2.await(), data3.await()).map {
+            imageData.value = lists.map {
                 it.imgurl
             }
+            //通过为LiveData设置新的值来触发更新UI
+//            imageData.value = listOf(dataList[0].await(), dataList[1].await(), dataList[2].await()).map {
+//                it.imgurl
+//            }
             //更新加载状态
             loadState.value = LoadState.Success()
         }
