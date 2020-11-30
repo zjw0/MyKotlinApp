@@ -14,4 +14,7 @@
     <color name="yellow">#FEB001</color>
     <color name="colorLightRed">#FF5B3B</color>
     <color name="colorRed">#FD4D02</color>
+    <color name="color_fef2cc">#FEF2CC</color>
+    <color name="color_e6e6e6">#E6E6E6</color>
+    <color name="color_fafafa">#FAFAFA</color>
 </resources>
